@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <alumno idAlumno="1002" nombre="Diana" apellido="Martinez" promedio="7.9"/>
+    <alumno idAlumno="1003" nombre="Emma" apellido="Munguia" promedio="9.0"/>
+</dataset> 
