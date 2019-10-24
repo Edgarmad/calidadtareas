@@ -8,11 +8,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
 
-public class GoogleImageTest {
+public class loginTest {
 
 	 private WebDriver driver;
 	  private String baseUrl;
@@ -33,14 +38,15 @@ public class GoogleImageTest {
 	  @Test
 	  public void LoginTest() throws Exception {
 	    driver.get(URL);
-	    WebElement element = driver.findElement(By.name("user-id"));
-	    element.sendKeys("00270500");
-	    element.submit();
-	    WebElement resultStat = driver.findElement(By.name(""));
-	    resultStat.submit();
+	    WebElement user = driver.findElement(By.id("user_id"));
+	    user.sendKeys("00270500");
+	    WebElement password = driver.findElement(By.id("password"));
+	    password.sendKeys("131196");
+	    password.sendKeys(Keys.ENTER);
 	    pause(5000);
+	    WebElement check = driver.findElement(By.id("anonymous_element_10"));
+	    assertThat(check.getText(),equalTo("Cursos en los que usted es: Alumno"));
 	    driver.close();
-	    Assert.assertEquals(resultStat,containsString("Resultado"));
 	  }
 
 	  @After
