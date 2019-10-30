@@ -26,7 +26,7 @@ public class MyDbUnitTest extends DBTestCase {
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "com.mysql.jdbc.Driver");
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, URL);
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "root");
-		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "Mecha2017");
+		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "password");
 		//System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_SCHEMA, "public.mydb" );
 	}
 	@Override
@@ -50,7 +50,7 @@ public class MyDbUnitTest extends DBTestCase {
 	public void testInsert() throws Exception{
 		try
 		{
-            Connection con= DriverManager.getConnection(URL, "root", "Mecha2017");
+            Connection con= DriverManager.getConnection(URL, "root", "password");
             Statement st;
             st= con.createStatement();
            int isEx = st.executeUpdate("insert into alumno(idAlumno,nombre, apellido, promedio) values (554,'cosa','cosa',5);");
@@ -74,7 +74,7 @@ public class MyDbUnitTest extends DBTestCase {
 	public void testDelete() throws Exception{
 		try
 		{
-            Connection con= DriverManager.getConnection(URL, "root", "Mecha2017");
+            Connection con= DriverManager.getConnection(URL, "root", "password");
             Statement st;
             st= con.createStatement();
            int isEx = st.executeUpdate("delete from alumno where idAlumno = 1001;");
@@ -97,7 +97,7 @@ public class MyDbUnitTest extends DBTestCase {
 	public void testUpdate() throws Exception{
 		try
 		{
-            Connection con= DriverManager.getConnection(URL, "root", "Mecha2017");
+            Connection con= DriverManager.getConnection(URL, "root", "password");
             Statement st;
             st= con.createStatement();
            int isEx = st.executeUpdate("UPDATE alumno set promedio = 10 where idAlumno = 1002");
@@ -121,7 +121,7 @@ public class MyDbUnitTest extends DBTestCase {
 	public void testGetAll() throws Exception{
 		try
 		{
-            Connection con= DriverManager.getConnection(URL, "root", "Mecha2017");
+            Connection con= DriverManager.getConnection(URL, "root", "password");
             Statement st;
             st= con.createStatement();
            int isEx = st.executeUpdate("Select * from alumno;");

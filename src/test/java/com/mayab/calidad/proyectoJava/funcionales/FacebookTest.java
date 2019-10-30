@@ -6,6 +6,9 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,7 +24,7 @@ public class FacebookTest {
   @Before
   public void setUp() throws Exception {
     //driver = new FirefoxDriver();
-    URL = "https://www.google.com/";
+    URL = "https://www.facebook.com/";
 	//baseUrl = "https://www.katalon.com/";
     System.setProperty("webdriver.chrome.driver", "E:\\Documentos\\Java Drivers\\chromedriver.exe");
     driver = new ChromeDriver();
@@ -29,16 +32,17 @@ public class FacebookTest {
   }
 
   @Test
-  public void LoginTest() throws Exception {
-    driver.get(URL);
-    WebElement element = driver.findElement(By.name("q"));
-    element.sendKeys("Hello");
-    element.submit();
-    WebElement resultStat = driver.findElement(By.name("//*[@id=\"resultStats\"]"));
-    resultStat.submit();
-    pause(5000);
-    driver.close();
-    Assert.assertEquals(resultStat,containsString("Resultado"));
+  public void LoginWrong() throws Exception {
+	  driver.get(URL);
+	    WebElement user = driver.findElement(By.id("email"));
+	    user.sendKeys("prueba@pruebacalidad.com");
+	    WebElement password = driver.findElement(By.id("pass"));
+	    password.sendKeys("password");
+	    password.sendKeys(Keys.ENTER);
+	    pause(5000);
+	    WebElement check = driver.findElement(By.className("_50f6"));
+	    assertThat(check.getText(),equalTo("Iniciar sesión en Facebook"));
+	    driver.close();
   }
 
   @After

@@ -43,9 +43,9 @@ public class loginTest {
 	  public void LoginTest() throws Exception {
 	    driver.get(URL);
 	    WebElement user = driver.findElement(By.id("user_id"));
-	    user.sendKeys("00270500");
+	    user.sendKeys("user");
 	    WebElement password = driver.findElement(By.id("password"));
-	    password.sendKeys("131196");
+	    password.sendKeys("password");
 	    password.sendKeys(Keys.ENTER);
 	    pause(5000);
 	    WebElement check = driver.findElement(By.className("moduleTitle"));
@@ -56,9 +56,9 @@ public class loginTest {
 	  public void LoginFailedTest() throws Exception{
 		  driver.get(URL);
 		  WebElement user = driver.findElement(By.id("user_id"));
-		  user.sendKeys("00270500");
+		  user.sendKeys("user");
 		  WebElement password = driver.findElement(By.id("password"));
-		  password.sendKeys("13119");
+		  password.sendKeys("password");
 		  password.sendKeys(Keys.ENTER);
 		  pause(5000);
 		  WebElement failcheck = driver.findElement(By.id("loginErrorMessage"));
