@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "68c74670-a06a-4ac7-8404-2cf628e6ceeb",
+		"name": "apiTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mern-crud.herokuapp.com/api/users/5dc88c575e59bc00121e0264",
+					"protocol": "https",
+					"host": [
+						"mern-crud",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"5dc88c575e59bc00121e0264"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Luis\",\r\n    \"email\": \"prueba@pueba.com\",\r\n    \"age\": 22,\r\n    \"gender\": \"\",\r\n    \"__v\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://mern-crud.herokuapp.com/api/users",
+					"protocol": "https",
+					"host": [
+						"mern-crud",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Luis\",\r\n    \"email\": \"prueba@pueba.com\",\r\n    \"age\": 22,\r\n    \"gender\": \"\",\r\n    \"__v\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://mern-crud.herokuapp.com/api/users/",
+					"protocol": "https",
+					"host": [
+						"mern-crud",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Luis\",\r\n    \"email\": \"prueba@pueba.com\",\r\n    \"age\": 22,\r\n    \"gender\": \"\",\r\n    \"__v\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://mern-crud.herokuapp.com/api/users/5dcb5de3eff2350012ec65d5",
+					"protocol": "https",
+					"host": [
+						"mern-crud",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"5dcb5de3eff2350012ec65d5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
