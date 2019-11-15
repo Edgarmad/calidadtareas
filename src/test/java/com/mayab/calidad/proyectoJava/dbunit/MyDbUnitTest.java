@@ -1,4 +1,4 @@
-package com.mayab.calidad.proyectotJava.dbunit;
+package com.mayab.calidad.proyectoJava.dbunit;
 
 import java.io.File;
 import java.io.InputStream;
