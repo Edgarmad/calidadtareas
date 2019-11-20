@@ -17,24 +17,11 @@
 ## (Comments)
 #Sample Feature Definition Template
 Feature: SoundCloud play/pause song
-  I want to use this template for my feature file
 
   @PlaySong
-  Scenario: Title of your scenario
-    Given Verify that a sond can be paused or playing in SoundCloud
-		Given I lunch ChromeDriver
-		When I open the SoundCloud song URL
-		And I click the pause_play button
-		Then I verify if the song is either paused or playing
-		Then I close the browser
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  Scenario: Verify that a song can be either paused or playing in SoundCloud
+    Given I launch ChromeDriver
+    When I open the SoundCloud song URL
+    And I click the pause_play button
+    Then I verify if the song is either paused or playing
+    Then I close the browser
